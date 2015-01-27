@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title Trivia Catracha</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @*<meta name="viewport" content="width=device-width" />*@
+
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Pragmatic Mate s.r.o. - http://pragmaticmates.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" type="text/css" href="../assets/libraries/font-awesome/css/font-awesome.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="../assets/libraries/rs-plugin/css/settings.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="../assets/css/animation.min.css" media="screen, projection">
+    <link rel="stylesheet" type="text/css" href="../assets/css/heaven.css" media="screen, projection">
+    
+    <link href='http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div id="wrapper" >
+        <header id="menu-home" class="block-content navbar-wrapper">
+            <div class="navbar-outer">
+                <div class="navbar-inner">
+                    <nav class="navbar" role="navigation">
+                        <div class="navbar-decoration">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">
+                                        
+                                        <img src="~/Assets/img/TcTitle.png" alt="Home" />
+                                        
+                                    </a>
+                                </div><!-- /.navbar-header -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+                                    <ul class="nav navbar-nav">
+                                        @*<li class="navbar-item active"><a class ="navbar-item-target">@Html.ActionLink("Home", "Index", "Home")</aclass></li>
+                                            <li class="navbar-item">@Html.ActionLink("About", "About", "Home")</li>
+                                            <li class="navbar-item">@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+                                        <li class="navbar-item active"><a href="@Url.Action("Index", "Home")" class="navbar-item-target">Inicio</a></li>
+                                        <li class="navbar-item"><a href="@Url.Action("Juego","Home")" class="navbar-item-target">Juego</a></li>
+                                        <li class="navbar-item"><a href="@Url.Action("About", "Home")" class="navbar-item-target">Anunciate</a></li>
+                                        <li class="navbar-item"><a href="@Url.Action("Contact", "Home")" class="navbar-item-target">Contacto</a></li>
+                                        <li class="navbar-item"><a href="@Url.Action("Login", "Account")" class="navbar-item-target">Login</a></li>
+
+                                    </ul><!-- /.nav-->
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container -->
+                        </div><!-- /.navbar-decoration -->
+                    </nav><!-- /.navbar -->
+                </div><!-- /.navbar-inner -->
+            </div><!-- /.navbar-outer -->
+        </header><!-- /.navbar-wrapper -->
+        <script type="text/javascript" src="../assets/js/jquery.js"></script>
+        <script type="text/javascript" src="../assets/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="../assets/js/jquery.viewport.min.js"></script>
+        <script type="text/javascript" src="../assets/libraries/rendro-easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+        <script type="text/javascript" src="../assets/libraries/isotope/jquery.isotope.min.js"></script>
+        <script type="text/javascript" src="../assets/libraries/jquery-smooth-scroll/src/jquery.smooth-scroll.js"></script>
+        <script type="text/javascript" src="../assets/libraries/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+        <script type="text/javascript" src="../assets/libraries/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="../assets/js/heaven.js"></script>
+        <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="https://parse.com/downloads/javascript/parse-1.3.3.js"></script>
+
+        <div id="body" >
+
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer id="footer">
+            2015 &copy; Xtudio16
+            <div class="span pull-right">
+                <span class="go-top"><i class="icon-arrow-up"></i></span>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </div>
+</body>
+</html>
